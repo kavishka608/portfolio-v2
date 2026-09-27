@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import FadeIn from './FadeIn';
 import SectionHeader from './SectionHeader';
+import { MailIcon, LinkedInIcon, GitHubIcon, LocationIcon, CheckIcon } from './Icons';
 
 export default function Contact() {
   const [sent, setSent] = useState(false);
@@ -22,28 +23,28 @@ export default function Contact() {
         <FadeIn>
           <div className="contact-info">
             <a href="mailto:npkdewduni@students.nsbm.ac.lk" className="contact-item">
-              <span>📧</span>
+              <MailIcon />
               <div>
                 <strong>Email</strong>
                 <p>npkdewduni@students.nsbm.ac.lk</p>
               </div>
             </a>
             <a href="https://www.linkedin.com/in/kavishka-dewduni/" target="_blank" rel="noreferrer" className="contact-item">
-              <span>💼</span>
+              <LinkedInIcon />
               <div>
                 <strong>LinkedIn</strong>
                 <p>kavishka-dewduni</p>
               </div>
             </a>
             <a href="https://github.com/kavishka608" target="_blank" rel="noreferrer" className="contact-item">
-              <span>🐙</span>
+              <GitHubIcon />
               <div>
                 <strong>GitHub</strong>
                 <p>kavishka608</p>
               </div>
             </a>
             <div className="contact-item">
-              <span>📍</span>
+              <LocationIcon />
               <div>
                 <strong>Location</strong>
                 <p>Kochchikade, Sri Lanka</p>
@@ -54,7 +55,11 @@ export default function Contact() {
 
         <FadeIn delay={150}>
           <form className="contact-form" onSubmit={handleSubmit}>
-            {sent && <div className="form-success">✅ Thanks! I'll get back to you soon.</div>}
+            {sent && (
+              <div className="form-success">
+                <CheckIcon /> Thanks! I'll get back to you soon.
+              </div>
+            )}
             <input type="text" placeholder="Your Name" required />
             <input type="email" placeholder="Your Email" required />
             <textarea placeholder="Your Message" rows="5" required />

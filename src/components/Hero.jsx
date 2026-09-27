@@ -1,4 +1,5 @@
 import useTypewriter from '../hooks/useTypewriter';
+import { DownloadIcon } from './Icons';
 
 export default function Hero() {
   const typed = useTypewriter([
@@ -11,7 +12,7 @@ export default function Hero() {
   return (
     <section id="home" className="hero">
       <div className="hero-content">
-        <p className="hero-tag">👋 Hello, I'm</p>
+        <p className="hero-tag">Hello, I'm</p>
         <h1>Kavishka <span className="gradient">Dewduni</span></h1>
         <h2 className="typewriter">
           {typed}<span className="cursor">|</span>
@@ -22,7 +23,13 @@ export default function Hero() {
         </p>
         <div className="hero-buttons">
           <a href="#projects" className="btn primary">View My Work</a>
-          <a href="#contact" className="btn secondary">Get In Touch</a>
+          <a
+            href="/Kavishka-Dewduni-Resume.pdf"
+            download
+            className="btn secondary with-icon"
+          >
+            <DownloadIcon /> Download Resume
+          </a>
         </div>
       </div>
     </section>

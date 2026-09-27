@@ -1,5 +1,6 @@
 import FadeIn from './FadeIn';
 import SectionHeader from './SectionHeader';
+import { LocationIcon, GraduationIcon, BriefcaseIcon } from './Icons';
 
 export default function About() {
   return (
@@ -27,9 +28,27 @@ export default function About() {
           </div>
           <div className="about-card">
             <div className="avatar">KD</div>
-            <p><strong>📍 Location</strong><br />Kochchikade, Sri Lanka</p>
-            <p><strong>🎓 Study</strong><br />BSc (Hons) Software Engineering</p>
-            <p><strong>💼 Status</strong><br />Open to Internships</p>
+            <div className="info-row">
+              <LocationIcon />
+              <div>
+                <strong>Location</strong>
+                <p>Kochchikade, Sri Lanka</p>
+              </div>
+            </div>
+            <div className="info-row">
+              <GraduationIcon />
+              <div>
+                <strong>Study</strong>
+                <p>BSc (Hons) Software Engineering</p>
+              </div>
+            </div>
+            <div className="info-row">
+              <BriefcaseIcon />
+              <div>
+                <strong>Status</strong>
+                <p>Open to Internships</p>
+              </div>
+            </div>
           </div>
         </div>
       </FadeIn>

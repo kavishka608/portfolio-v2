@@ -1,5 +1,6 @@
 import FadeIn from './FadeIn';
 import SectionHeader from './SectionHeader';
+import { FolderIcon, ArrowUpRightIcon } from './Icons';
 
 const projects = [
   {
@@ -8,8 +9,7 @@ const projects = [
     desc: 'Web platform allowing university students to access and search past exam papers efficiently. Built responsive interfaces with React.js and collaborated on frontend-backend integration.',
     stack: 'React.js · REST API · Team Project',
     link: 'https://github.com/kavishka608/NextStep.git',
-    image: '/projects/nextstep.png',
-    color: '#8fa8bf', // soft dusty blue
+    color: '#8fa8bf',
   },
   {
     title: 'SpareHubLK',
@@ -17,8 +17,7 @@ const projects = [
     desc: 'Full-stack e-commerce platform for automotive parts. Used PHP & MySQL for product listings, user management, and search — focused on UX and optimized database queries.',
     stack: 'PHP · MySQL · JavaScript',
     link: 'https://github.com/kavishka608',
-    image: '/projects/sparehub.png',
-    color: '#a8bfa1', // sage green
+    color: '#a8bfa1',
   },
   {
     title: 'HirePath AI',
@@ -26,8 +25,7 @@ const projects = [
     desc: 'Recruiter management subsystem with 9 RESTful APIs. Built using Repository Pattern, Service Layer and SOLID principles. Includes job search, dashboard statistics and proper database relationships.',
     stack: 'ASP.NET Core 8 · C# · Entity Framework · SQL Server · Swagger',
     link: 'https://github.com/kavishka608/HirePath',
-    image: '/projects/hirepath.png',
-    color: '#8fa8bf', // dusty blue
+    color: '#8fa8bf',
   },
   {
     title: 'HomeCraft',
@@ -35,8 +33,7 @@ const projects = [
     desc: 'Full-stack platform connecting homeowners with construction professionals. 20+ RESTful APIs with JWT authentication, PostgreSQL database, and responsive React frontend with bidding and review features.',
     stack: 'Node.js · Express · PostgreSQL · React · JWT',
     link: 'https://github.com/kavishka608/homecraft-backend',
-    image: '/projects/homecraft.png',
-    color: '#a8bfa1', // sage green
+    color: '#a8bfa1',
   },
 ];
 
@@ -52,10 +49,7 @@ export default function Projects() {
         {projects.map((p, i) => (
           <FadeIn key={p.title} delay={i * 80}>
             <div className="project-row">
-              <div
-                className="project-mockup"
-                style={{ background: p.color }}
-              >
+              <div className="project-mockup" style={{ background: p.color }}>
                 <div className="mockup-bar">
                   <span /><span /><span />
                 </div>
@@ -82,7 +76,7 @@ export default function Projects() {
                   rel="noreferrer"
                   className="project-link"
                 >
-                  View on GitHub ↗
+                  View on GitHub <ArrowUpRightIcon size={16} />
                 </a>
               </div>
             </div>
