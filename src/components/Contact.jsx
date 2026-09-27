@@ -22,11 +22,11 @@ export default function Contact() {
       <div className="contact-grid">
         <FadeIn>
           <div className="contact-info">
-            <a href="mailto:npkdewduni@students.nsbm.ac.lk" className="contact-item">
+            <a href="mailto:kavishkadewduni@gmail.com" className="contact-item">
               <MailIcon />
               <div>
                 <strong>Email</strong>
-                <p>npkdewduni@students.nsbm.ac.lk</p>
+                <p>kavishkadewduni@gmail.com</p>
               </div>
             </a>
             <a href="https://www.linkedin.com/in/kavishka-dewduni/" target="_blank" rel="noreferrer" className="contact-item">
