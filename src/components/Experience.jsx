@@ -9,16 +9,22 @@ const items = [
     desc: 'Undergraduate program focused on software engineering, algorithms, web development, and system design.',
   },
   {
-    year: '2020 – 2022',
-    title: 'G.C.E Advanced Level – Technology Stream',
-    place: 'Jeyaraj Fernando Pulle M.V, Negombo',
-    desc: 'Engineering Technology (S), ICT (C), Science for Technology (C).',
-  },
-  {
     year: '2026',
     title: 'Python for Beginners',
     place: 'University of Moratuwa & DP Education',
     desc: 'Completed online Python fundamentals course covering variables, data types, control structures, and functions.',
+  },
+  {
+    year: '2023',
+    title: 'Diploma in Computer Applications',
+    place: 'Digitec - Negombo',
+    desc: 'Comprehensive diploma covering computer fundamentals, office applications, and practical IT skills.',
+  },
+  {
+    year: '2020 – 2022',
+    title: 'G.C.E Advanced Level – Technology Stream',
+    place: 'Jeyaraj Fernando Pulle M.V, Negombo',
+    desc: 'Engineering Technology (S), ICT (C), Science for Technology (C).',
   },
 ];
 
