@@ -4,8 +4,8 @@ import { DownloadIcon } from './Icons';
 export default function Hero() {
   const typed = useTypewriter([
     'Software Engineer',
-    'React Developer',
-    'Full-Stack Enthusiast',
+    'Frontend Developer',
+    'Full-Stack Developer',
     'Problem Solver',
   ]);
 
