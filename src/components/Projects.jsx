@@ -5,13 +5,22 @@ import { ArrowUpRightIcon } from './Icons';
 
 const projects = [
   {
+    title: 'NexaERP',
+    subtitle: 'Enterprise Resource Planning',
+    desc: 'Contributed to an 11-module ERP system, developing business functionality using Java, Spring Boot, React, and PostgreSQL. Built the HR & Payroll module covering employee, leave, salary, and payroll management, implemented RESTful APIs, JWT authentication, and role-based access control.',
+    stack: 'Java · Spring Boot · React · PostgreSQL · JWT',
+    link: 'https://github.com/kavishka608',
+    images: ['/projects/nexaerp-1.png', '/projects/nexaerp-2.png'],
+    color: '#dbe3ec',
+  },
+  {
     title: 'NextStep',
     subtitle: 'University Management Platform',
     desc: 'Web platform allowing university students to access and search past exam papers efficiently. Built responsive interfaces with React.js and collaborated on frontend-backend integration.',
     stack: 'React.js · REST API · Team Project',
     link: 'https://github.com/kavishka608/NextStep.git',
-    images: ['/projects/Nextstep1.jpeg', '/projects/Nextstep2.png'],
-    color: '#8fa8bf',
+    images: ['/projects/nextstep-1.png', '/projects/nextstep-2.png'],
+    color: '#dfe6dd',
   },
   {
     title: 'SpareHubLK',
@@ -19,8 +28,8 @@ const projects = [
     desc: 'Full-stack e-commerce platform for automotive parts. Used PHP & MySQL for product listings, user management, and search — focused on UX and optimized database queries.',
     stack: 'PHP · MySQL · JavaScript',
     link: 'https://github.com/kavishka608',
-    images: ['/projects/Sparehub1.jpeg', '/projects/Sparehub2.jpeg'],
-    color: '#a8bfa1',
+    images: ['/projects/sparehub-1.png', '/projects/sparehub-2.png'],
+    color: '#e8dfd0',
   },
   {
     title: 'HirePath AI',
@@ -28,8 +37,8 @@ const projects = [
     desc: 'Recruiter management subsystem with 9 RESTful APIs. Built using Repository Pattern, Service Layer and SOLID principles. Includes job search, dashboard statistics and proper database relationships.',
     stack: 'ASP.NET Core 8 · C# · Entity Framework · SQL Server · Swagger',
     link: 'https://github.com/kavishka608/HirePath',
-    images: ['/projects/Hirepath1.png', '/projects/Hirepath2.png'],
-    color: '#8fa8bf',
+    images: ['/projects/hirepath-1.png', '/projects/hirepath-2.png'],
+    color: '#dfe6dd',
   },
   {
     title: 'HomeCraft',
@@ -38,7 +47,7 @@ const projects = [
     stack: 'Node.js · Express · PostgreSQL · React · JWT',
     link: 'https://github.com/kavishka608/homecraft-backend',
     images: ['/projects/homecraft-1.png', '/projects/homecraft-2.png'],
-    color: '#a8bfa1',
+    color: '#e8dfd0',
   },
 ];
 
@@ -107,8 +116,8 @@ export default function Projects() {
     <section id="projects" className="section">
       <SectionHeader
         tag="Projects"
-        title="Things I've Built"
-        desc="A selection of projects where I applied development fundamentals to useful user experiences."
+        title="Selected Projects"
+        desc="Applications I have built and contributed to, alongside interface designs focused on real user needs."
       />
       <div className="projects-list">
         {projects.map((p, i) => (
@@ -117,7 +126,7 @@ export default function Projects() {
               <ProjectCarousel images={p.images} title={p.title} color={p.color} />
               <div className="project-info">
                 <span className="project-num">
-                  {String(i + 1).padStart(2, '0')}
+                  {String(i + 1).padStart(2, '0')} / {String(projects.length).padStart(2, '0')}
                 </span>
                 <h3>{p.title}</h3>
                 <p className="project-sub">{p.subtitle}</p>
