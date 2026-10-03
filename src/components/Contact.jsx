@@ -9,13 +9,40 @@ import {
   CheckIcon,
 } from './Icons';
 
+const ACCESS_KEY = '4adee674-0f5f-42d5-b72d-ccbdcf71ded4';
+
 export default function Contact() {
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSent(true);
-    e.target.reset();
+    setLoading(true);
+    setError('');
+    setSent(false);
+
+    const formData = new FormData(e.target);
+    formData.append('access_key', ACCESS_KEY);
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData,
+      });
+      const data = await res.json();
+
+      if (data.success) {
+        setSent(true);
+        e.target.reset();
+      } else {
+        setError(data.message || 'Something went wrong. Please try again.');
+      }
+    } catch (err) {
+      setError('Network error. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -74,10 +101,15 @@ export default function Contact() {
                 <CheckIcon /> Thanks! I'll get back to you soon.
               </div>
             )}
-            <input type="text" placeholder="Your Name" required />
-            <input type="email" placeholder="Your Email" required />
-            <textarea placeholder="Your Message" rows="5" required />
-            <button type="submit" className="btn primary">Send Message</button>
+            {error && (
+              <div className="form-error">{error}</div>
+            )}
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input type="email" name="email" placeholder="Your Email" required />
+            <textarea name="message" placeholder="Your Message" rows="5" required />
+            <button type="submit" className="btn primary" disabled={loading}>
+              {loading ? 'Sending...' : 'Send Message'}
+            </button>
           </form>
         </FadeIn>
       </div>
