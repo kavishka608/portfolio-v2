@@ -32,7 +32,7 @@ export default function Skills() {
   return (
     <section id="skills" className="section alt">
       <SectionHeader
-        tag="02. Skills"
+        tag="Technical Skills"
         title="Skills & Technologies"
         desc="Technologies and tools I use to build full-stack applications, APIs, and database-driven solutions."
       />

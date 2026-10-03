@@ -1,25 +1,18 @@
-import useTypewriter from '../hooks/useTypewriter';
 import { DownloadIcon } from './Icons';
 
 export default function Hero() {
-  const typed = useTypewriter([
-    'Software Engineer',
-    'Frontend Developer',
-    'Full-Stack Developer',
-    'Problem Solver',
-  ]);
-
   return (
     <section id="home" className="hero">
       <div className="hero-content">
-        <p className="hero-tag">Hello, I'm</p>
-        <h1>Kavishka <span className="gradient">Dewduni</span></h1>
-        <h2 className="typewriter">
-          {typed}<span className="cursor">|</span>
-        </h2>
+        <p className="hero-tag">Third-year Software Engineering Undergraduate</p>
+        <h1>
+          Kavishka
+          <br />
+          <span className="gradient">Dewduni</span>
+        </h1>
         <p className="hero-desc">
-          Undergraduate Software Engineering student passionate about building
-          clean, modern, and performant web applications.
+          Software Engineering undergraduate at NSBM Green University, passionate
+          about building real-world solutions through clean, purposeful code.
         </p>
         <div className="hero-buttons">
           <a href="#projects" className="btn primary">View My Work</a>

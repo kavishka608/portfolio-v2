@@ -1,7 +1,13 @@
 import { useState } from 'react';
 import FadeIn from './FadeIn';
 import SectionHeader from './SectionHeader';
-import { MailIcon, LinkedInIcon, GitHubIcon, LocationIcon, CheckIcon } from './Icons';
+import {
+  MailIcon,
+  LinkedInIcon,
+  GitHubIcon,
+  LocationIcon,
+  CheckIcon,
+} from './Icons';
 
 export default function Contact() {
   const [sent, setSent] = useState(false);
@@ -13,11 +19,11 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="section">
+    <section id="contact" className="section alt">
       <SectionHeader
-        tag="05. Contact"
+        tag="Get in touch"
         title="Let's Connect"
-        desc="Have an opportunity, project, or just want to say hi? I'd love to hear from you."
+        desc="I'm open to internship opportunities, collaborations, and interesting projects. Feel free to reach out — I'll get back to you as soon as I can."
       />
       <div className="contact-grid">
         <FadeIn>
@@ -29,26 +35,34 @@ export default function Contact() {
                 <p>kavishkadewduni@gmail.com</p>
               </div>
             </a>
-            <a href="https://www.linkedin.com/in/kavishka-dewduni/" target="_blank" rel="noreferrer" className="contact-item">
-              <LinkedInIcon />
-              <div>
-                <strong>LinkedIn</strong>
-                <p>kavishka-dewduni</p>
-              </div>
-            </a>
-            <a href="https://github.com/kavishka608" target="_blank" rel="noreferrer" className="contact-item">
-              <GitHubIcon />
-              <div>
-                <strong>GitHub</strong>
-                <p>kavishka608</p>
-              </div>
-            </a>
             <div className="contact-item">
               <LocationIcon />
               <div>
                 <strong>Location</strong>
                 <p>Kochchikade, Sri Lanka</p>
               </div>
+            </div>
+            <div className="contact-item">
+              <CheckIcon />
+              <div>
+                <strong>Availability</strong>
+                <p>Open to internships</p>
+              </div>
+            </div>
+            <div className="contact-social-block">
+              <p className="contact-social-label">Find me on</p>
+              <div className="contact-socials">
+                <a href="https://github.com/kavishka608" target="_blank" rel="noreferrer" aria-label="GitHub">
+                  <GitHubIcon size={20} />
+                </a>
+                <a href="https://www.linkedin.com/in/kavishka-dewduni/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+                  <LinkedInIcon size={20} />
+                </a>
+                <a href="mailto:kavishkadewduni@gmail.com" aria-label="Email">
+                  <MailIcon size={20} />
+                </a>
+              </div>
+              <p className="contact-note">I typically respond within 24–48 hours.</p>
             </div>
           </div>
         </FadeIn>

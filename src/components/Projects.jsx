@@ -7,47 +7,84 @@ const projects = [
   {
     title: 'NexaERP',
     subtitle: 'Enterprise Resource Planning',
-    desc: 'Contributed to an 11-module ERP system, developing business functionality using Java, Spring Boot, React, and PostgreSQL. Built the HR & Payroll module covering employee, leave, salary, and payroll management, implemented RESTful APIs, JWT authentication, and role-based access control.',
+    bullets: [
+      'Contributed to an 11-module ERP system with Java, Spring Boot, React, and PostgreSQL.',
+      'Developed the HR & Payroll module: employee, leave, salary, and payroll management.',
+      'Implemented RESTful APIs, JWT authentication, and role-based access control.',
+      'Collaborated on module integration, DB migrations, debugging, and Git workflows.',
+    ],
     stack: 'Java · Spring Boot · React · PostgreSQL · JWT',
     link: 'https://github.com/kavishka608',
-    images: ['/projects/nexaerp-1.png', '/projects/nexaerp-2.png'],
+    images: ['/projects/nexaerp.jpeg'],
     color: '#dbe3ec',
   },
   {
     title: 'NextStep',
     subtitle: 'University Management Platform',
-    desc: 'Web platform allowing university students to access and search past exam papers efficiently. Built responsive interfaces with React.js and collaborated on frontend-backend integration.',
+    bullets: [
+      'Built responsive React.js interfaces for students to search past exam papers.',
+      'Integrated frontend components with backend REST services.',
+      'Collaborated on planning, testing, and debugging for better performance.',
+    ],
     stack: 'React.js · REST API · Team Project',
     link: 'https://github.com/kavishka608/NextStep.git',
-    images: ['/projects/nextstep-1.png', '/projects/nextstep-2.png'],
+    images: ['/projects/nextstep.jpeg'],
     color: '#dfe6dd',
   },
   {
     title: 'SpareHubLK',
     subtitle: 'Automotive Parts E-commerce',
-    desc: 'Full-stack e-commerce platform for automotive parts. Used PHP & MySQL for product listings, user management, and search — focused on UX and optimized database queries.',
+    bullets: [
+      'Developed and deployed a full-stack e-commerce platform for automotive parts.',
+      'Used PHP & MySQL for product listings, user management, and search features.',
+      'Optimized database queries and focused on a user-friendly interface.',
+    ],
     stack: 'PHP · MySQL · JavaScript',
     link: 'https://github.com/kavishka608',
-    images: ['/projects/sparehub-1.png', '/projects/sparehub-2.png'],
+    images: ['/projects/sparehub.jpeg'],
     color: '#e8dfd0',
   },
   {
     title: 'HirePath AI',
     subtitle: 'AI-Powered Recruitment Platform',
-    desc: 'Recruiter management subsystem with 9 RESTful APIs. Built using Repository Pattern, Service Layer and SOLID principles. Includes job search, dashboard statistics and proper database relationships.',
-    stack: 'ASP.NET Core 8 · C# · Entity Framework · SQL Server · Swagger',
+    bullets: [
+      'Built a recruiter management subsystem with 9 RESTful APIs using ASP.NET Core 8.',
+      'Implemented Repository Pattern and Service Layer following SOLID principles.',
+      'Designed database models for Companies, Departments, Jobs, and JobSkills.',
+      'Documented all endpoints with Swagger and worked in a 5-member Agile team.',
+    ],
+    stack: 'ASP.NET Core 8 · C# · EF Core · SQL Server · Swagger',
     link: 'https://github.com/kavishka608/HirePath',
-    images: ['/projects/hirepath-1.png', '/projects/hirepath-2.png'],
+    images: ['/projects/hirepath.jpeg'],
     color: '#dfe6dd',
   },
   {
     title: 'HomeCraft',
     subtitle: 'Home Services Booking Platform',
-    desc: 'Full-stack platform connecting homeowners with construction professionals. 20+ RESTful APIs with JWT authentication, PostgreSQL database, and responsive React frontend with bidding and review features.',
+    bullets: [
+      'Built a full-stack platform with Node.js, Express, PostgreSQL, and React.',
+      'Implemented 20+ RESTful APIs with JWT authentication.',
+      'Designed a 7-table PostgreSQL schema including Users, Pros, Projects, Bids.',
+      'Built bidding system, professional search, and rating/review functionality.',
+    ],
     stack: 'Node.js · Express · PostgreSQL · React · JWT',
     link: 'https://github.com/kavishka608/homecraft-backend',
-    images: ['/projects/homecraft-1.png', '/projects/homecraft-2.png'],
+    images: ['/projects/homecraft.jpeg'],
     color: '#e8dfd0',
+  },
+
+    {
+    title: 'NSBMDAYS',
+    subtitle: 'University Digital Platform',
+    bullets: [
+      'Designed a university digital platform prototype integrating academic and student services using Figma.',
+      'Applied HCI principles to design user flows, information architecture, navigation, and accessible interfaces.',
+      'Conducted usability-focused design and iterated interfaces based on user needs and feedback.',
+    ],
+    stack: 'Figma · HCI · UI/UX · Prototyping · Wireframing · Usability',
+    link: 'https://www.figma.com/', // ← replace with your Figma link
+    images: ['/projects/nsbmdays.jpeg'],
+    color: '#dfe6dd',
   },
 ];
 
@@ -55,53 +92,25 @@ function ProjectCarousel({ images, title, color }) {
   const [index, setIndex] = useState(0);
   const hasMultiple = images.length > 1;
 
-  const next = (e) => {
-    e.preventDefault();
-    setIndex((i) => (i + 1) % images.length);
-  };
-  const prev = (e) => {
-    e.preventDefault();
-    setIndex((i) => (i - 1 + images.length) % images.length);
-  };
+  const next = (e) => { e.preventDefault(); setIndex((i) => (i + 1) % images.length); };
+  const prev = (e) => { e.preventDefault(); setIndex((i) => (i - 1 + images.length) % images.length); };
 
   return (
     <div className="project-mockup" style={{ background: color }}>
-      <div className="mockup-bar">
-        <span /><span /><span />
-      </div>
+      <div className="mockup-bar"><span /><span /><span /></div>
       <div className="mockup-body">
-        <img
-          src={images[index]}
-          alt={`${title} screenshot ${index + 1}`}
-          loading="lazy"
-        />
+        <img src={images[index]} alt={`${title} screenshot ${index + 1}`} loading="lazy" />
       </div>
-
       {hasMultiple && (
         <>
-          <button
-            className="carousel-btn prev"
-            onClick={prev}
-            aria-label="Previous screenshot"
-          >
-            ‹
-          </button>
-          <button
-            className="carousel-btn next"
-            onClick={next}
-            aria-label="Next screenshot"
-          >
-            ›
-          </button>
+          <button className="carousel-btn prev" onClick={prev} aria-label="Previous">‹</button>
+          <button className="carousel-btn next" onClick={next} aria-label="Next">›</button>
           <div className="carousel-dots">
             {images.map((_, i) => (
               <span
                 key={i}
                 className={`dot ${i === index ? 'active' : ''}`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  setIndex(i);
-                }}
+                onClick={(e) => { e.preventDefault(); setIndex(i); }}
               />
             ))}
           </div>
@@ -113,9 +122,9 @@ function ProjectCarousel({ images, title, color }) {
 
 export default function Projects() {
   return (
-    <section id="projects" className="section">
+    <section id="projects" className="section alt">
       <SectionHeader
-        tag="Projects"
+        tag="My Portfolio"
         title="Selected Projects"
         desc="Applications I have built and contributed to, alongside interface designs focused on real user needs."
       />
@@ -130,8 +139,12 @@ export default function Projects() {
                 </span>
                 <h3>{p.title}</h3>
                 <p className="project-sub">{p.subtitle}</p>
+                <ul className="project-bullets">
+                  {p.bullets.map((b, j) => (
+                    <li key={j}>{b}</li>
+                  ))}
+                </ul>
                 <p className="project-stack">{p.stack}</p>
-                <p className="project-desc">{p.desc}</p>
                 <a
                   href={p.link}
                   target="_blank"
